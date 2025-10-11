@@ -19,7 +19,7 @@ except ImportError:
 # Read required environment variables
 ALGOLIA_APP_ID = os.getenv("ALGOLIA_APP_ID")
 ALGOLIA_ADMIN_KEY = os.getenv("ALGOLIA_ADMIN_KEY")
-ALGOLIA_INDEX_FILE = os.getenv("ALGOLIA_INDEX_FILE", os.path.join("public", "algolia.json"))
+ALGOLIA_INDEX_FILE = os.getenv("ALGOLIA_INDEX_FILE", os.path.join("public", "index.json"))
 ALGOLIA_INDEX_NAME = os.getenv("ALGOLIA_INDEX_NAME")
 
 if not ALGOLIA_APP_ID or not ALGOLIA_ADMIN_KEY or not ALGOLIA_INDEX_NAME:

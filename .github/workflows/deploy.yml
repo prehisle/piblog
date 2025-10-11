@@ -52,6 +52,23 @@ jobs:
       - name: Build site with Hugo
         run: hugo --minify
 
+      - name: Debug Algolia env
+        env:
+          ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
+          ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+        run: |
+          echo "ALGOLIA_APP_ID: ${ALGOLIA_APP_ID:+set}"
+          echo "ALGOLIA_INDEX_NAME: ${ALGOLIA_INDEX_NAME:+set}"
+          echo "ALGOLIA_INDEX_FILE: ${ALGOLIA_INDEX_FILE:+set}"
+          # 仅打印长度，避免泄露密钥
+          if [ -n "${ALGOLIA_ADMIN_KEY}" ]; then
+            echo "ALGOLIA_ADMIN_KEY length: ${#ALGOLIA_ADMIN_KEY}"
+          else
+            echo "ALGOLIA_ADMIN_KEY: <empty>"
+          fi
+
       - name: Update Algolia index
         # 将必要的密钥通过仓库 Settings -> Secrets and variables -> Actions 配置
         env:
@@ -60,7 +77,7 @@ jobs:
           ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
           ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
           # 从 Secrets 读取
-          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
         run: |
           python scripts/upload_index_to_algolia.py
 

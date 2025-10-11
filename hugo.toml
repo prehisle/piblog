@@ -1,7 +1,7 @@
 
 
 #baseURL = "http://www.share4y.cn"
-baseURL = ""
+baseURL = "https://prehisle.github.io/piblog"
 # [en, zh-cn, fr, ...] determines default content language
 # [en, zh-cn, fr, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"

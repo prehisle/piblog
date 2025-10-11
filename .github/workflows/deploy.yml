@@ -77,7 +77,7 @@ jobs:
           ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
           ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
           # 从 Secrets 读取
-          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
         run: |
           python scripts/upload_index_to_algolia.py
 

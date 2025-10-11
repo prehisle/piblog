@@ -1,0 +1,78 @@
+name: Build and Deploy Hugo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# 避免并发部署相互覆盖
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps (requirements.txt if present)
+        shell: bash
+        run: |
+          set -e
+          if [ -f scripts/requirements.txt ]; then
+            pip install -r scripts/requirements.txt
+          else
+            # 至少安装 algoliasearch；如脚本需要其他库，请放入 scripts/requirements.txt
+            pip install algoliasearch
+          fi
+
+      - name: Build site with Hugo
+        run: hugo --minify
+
+      - name: Update Algolia index
+        # 将必要的密钥通过仓库 Settings -> Secrets and variables -> Actions 配置
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+        run: |
+          python scripts/upload_index_to_algolia.py
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

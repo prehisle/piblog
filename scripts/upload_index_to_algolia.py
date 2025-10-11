@@ -1,8 +1,9 @@
 import json
+import logging
 import os
 
 # Algolia Python SDK v3 import path
-
+logging.basicConfig(level=logging.DEBUG)
 # Optional: load environment variables from .env at project root
 try:
     from dotenv import load_dotenv

@@ -74,7 +74,7 @@ autoCollapseToc: true
       .call(d3.axisBottom(x).tickSizeOuter(0)) // 删除x轴外线，如下图2
   ```
 
-  ![image-20200910163121606](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEd3e1ae5434d540fd98a1131ec24fe521/129)
+  ![image-20200910163121606](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEd3e1ae5434d540fd98a1131ec24fe521/129)
 
 ### learn-d3
 
@@ -86,7 +86,7 @@ autoCollapseToc: true
   })
   ```
 
-  ![image-20200910175855051](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEd99280a5033947559d2a5da8e4ea3946/130)
+  ![image-20200910175855051](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEd99280a5033947559d2a5da8e4ea3946/130)
 
 * 引入外部模块
 
@@ -114,7 +114,7 @@ autoCollapseToc: true
 
 * stoke-dasharray和stroke-dashoffset
 
-  ![image-20200911121638767](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE80f72e34e05741f0bd39420b578f3405/131)
+  ![image-20200911121638767](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE80f72e34e05741f0bd39420b578f3405/131)
 
   * stroke-dashoffset="3"，偏移正数，虚线整体左移
 

@@ -20,6 +20,6 @@ set https_proxy=http://127.0.0.1:10809
 ```
 * 再用`pip install pandas`即可安装成功
 
-![windows10下安装pandas](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE95a211f93a1047f0bc26160ef4c6690a/123)
+![windows10下安装pandas](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE95a211f93a1047f0bc26160ef4c6690a/123)
 
 

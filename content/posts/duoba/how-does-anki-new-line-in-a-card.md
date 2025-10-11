@@ -16,5 +16,5 @@ autoCollapseToc: true
 
 制作卡片时用`<br>`代替换行,导入时勾选`允许在字段中使用HTML`
 
-![anki截图:允许在字段中使用HTML](http://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200402112745103_62a74993113f48ffbab55b36d6c05879/23492 )
+![anki截图:允许在字段中使用HTML](https://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200402112745103_62a74993113f48ffbab55b36d6c05879/23492 )
 

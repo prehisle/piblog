@@ -19,7 +19,7 @@ autoCollapseToc: true
 
 ## 效果演示
 
-![ydpic效果演示](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/demo_9589e25443f44233b727daa09dfc1623/23)
+![ydpic效果演示](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/demo_9589e25443f44233b727daa09dfc1623/23)
 
 ## 快速上手（WINDOWS）
 
@@ -44,7 +44,7 @@ autoCollapseToc: true
 
 2. 随便分享一个文档,复制分享链接,后面会用到,如下图
 
-   ![获取分享文档链接](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/share_note_e64c8a0bd8a24e79b1d472690d5207cb/24)
+   ![获取分享文档链接](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/share_note_e64c8a0bd8a24e79b1d472690d5207cb/24)
 
 #### 配置`ydpic`
 
@@ -62,13 +62,13 @@ ydpic.exe init
 
 在当前目录生成初始配置文件`config.ini`，如图：
 
-![image-20200406195016680](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/init_config_922be5aea07a4ad491bb852065617db7/25)
+![image-20200406195016680](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/init_config_922be5aea07a4ad491bb852065617db7/25)
 
 3. 修改配置
 
 打开`config.ini`配置有道云笔记账号密码及分享文档链接，如下图
 
-![image-20200406195112829](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/config_4a2c6819d307488c99f7a4591e1d4d42/26)
+![image-20200406195112829](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/config_4a2c6819d307488c99f7a4591e1d4d42/26)
 
 
 
@@ -82,7 +82,7 @@ ydpic.exe init
 
 * 点击`验证图片上传选项`进行上传测试，测试成功大功告成如下图
 
-  ![typora_test](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/typora_test_b8d3eeb1d2f545cbb3c5122b6cc4f0d6/27)
+  ![typora_test](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/typora_test_b8d3eeb1d2f545cbb3c5122b6cc4f0d6/27)
 
 ## 支持系统
 

@@ -25,7 +25,7 @@ pip install wheel
 
 ### ubuntu18.04使用pip安装某包时报错
 
-![image-20200401153406748](http://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200401153406748_4d9d6a45b0f34a249060fa6f5ce92a44/23489)
+![image-20200401153406748](https://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200401153406748_4d9d6a45b0f34a249060fa6f5ce92a44/23489)
 
 ```
 prehisle@ubuntu:~/tmp/tyoudaoimg$ pip install -i https://pypi.org/simple youdaopic==0.0.9

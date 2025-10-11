@@ -18,7 +18,7 @@ autoCollapseToc: true
 ```
 viewof replay = html`<button>Replay`
 ```
-![](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEa86462d7035f4634acd56be0413fa192/134)
+![](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCEa86462d7035f4634acd56be0413fa192/134)
 
 ### 逐步画完的拆线图
 ```
@@ -288,7 +288,7 @@ ${formatClose(d.close)}</title>
 </svg>`
 ```
 ### 线上实心圆提示
-![](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE2e1a04a891d249f1b8bd2d6412c4c8f1/135)
+![](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE2e1a04a891d249f1b8bd2d6412c4c8f1/135)
 ```
 {
   const tooltip = new Tooltip();

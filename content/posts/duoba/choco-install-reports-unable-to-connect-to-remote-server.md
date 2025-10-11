@@ -19,7 +19,7 @@ Error retrieving packages from source 'https://chocolatey.org/api/v2/':
  无法连接到远程服务器
 ```
 
-![报错截图](http://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200405230613583_47577705db274dac881d80690bef3e76/23563 "报错截图")
+![报错截图](https://note.youdao.com/yws/public/resource/41112cc5871c7abf8ae2c90c3f174804/xmlnote/image-20200405230613583_47577705db274dac881d80690bef3e76/23563 "报错截图")
 
 除错办法：
 

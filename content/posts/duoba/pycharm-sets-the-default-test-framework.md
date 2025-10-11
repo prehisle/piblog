@@ -22,5 +22,5 @@ graph LR
 
 改成你需要的测试框架,如下图，我改成了`pytest`
 
-![修改Pycharm中默认的测试框架为pytest](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE9a33d773bff44b4e823abe51f602d2e9/102 "修改Pycharm中默认的测试框架为pytest")
+![修改Pycharm中默认的测试框架为pytest](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE9a33d773bff44b4e823abe51f602d2e9/102 "修改Pycharm中默认的测试框架为pytest")
 

@@ -16,5 +16,5 @@ autoCollapseToc: true
 ```
 python3.8 -m pip install --upgrade pip
 ```
-![用pip升级pip](http://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE23ce6aa6d2f5445398e854244927ce62/115)
+![用pip升级pip](https://note.youdao.com/yws/public/resource/40e7acccfd342428f39d3dc7cca9ce31/xmlnote/WEBRESOURCE23ce6aa6d2f5445398e854244927ce62/115)
 

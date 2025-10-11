@@ -55,9 +55,12 @@ jobs:
       - name: Update Algolia index
         # 将必要的密钥通过仓库 Settings -> Secrets and variables -> Actions 配置
         env:
-          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          # 从 Repository variables 读取
+          ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
+          ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
+          # 从 Secrets 读取
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
         run: |
           python scripts/upload_index_to_algolia.py
 

@@ -1,6 +1,6 @@
 +++
 date = '2025-10-15T15:40:56+08:00'
-draft = true
+draft = false
 title = '如何常感动'
 +++
 
@@ -9,7 +9,6 @@ title = '如何常感动'
 繼續倒敘，第三世結束后，即將再次見到母親的第四世的路上，遇到了早已故去的外婆，她和母親長得很像，告訴我很多母親還是小孩子一路成長的故事，然後還告訴我，雖然母親故去了，和她一起在彼岸，但是從未停止過對我的思念.... （這一段尤其感人，理解到時直接淚崩了）
 最後和這一世的母親相遇後，我釋然了，我明白時空是一個迴圈，不管怎麼樣，不管多少世，母親都會以不同的角色陪在我身邊，即使我們可能互相不認識，但是我們的之間的緣分永遠不會停止，這就是最後一句歌詞， 人們失憶著相聚的意思
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CcD5Dg3qxnY?si=B0HhhDkMDCiyuYAm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-好的，这是您提供的文字内容的简体中文版本。
 
 歌词讲述了这样一个故事：
 

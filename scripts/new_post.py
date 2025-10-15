@@ -134,4 +134,7 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     #  python .\scripts\new_post.py duoba "2025年第一篇"
+    if len(sys.argv) < 2:
+        sys.argv.append("duoba")
+        sys.argv.append("2025年第一篇")
     sys.exit(main(sys.argv))

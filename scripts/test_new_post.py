@@ -3,6 +3,7 @@ import sys
 import re
 import datetime
 import subprocess
+from pathlib import Path
 from urllib.parse import quote
 
 import requests
@@ -29,7 +30,7 @@ def get_session_inner(proxy: str = "") -> requests.Session:
 
 def get_session() -> requests.Session:
     # Assume a local proxy may exist; if not, direct session still works
-    proxy = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy") or "http://127.0.0.1:10808"
+    proxy = "http://127.0.0.1:10808"
     return get_session_inner(proxy)
 
 
@@ -52,7 +53,7 @@ def google_translate(sl: str, tl: str, q: str) -> str:
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = session.get(url, params=params, headers=headers)
     print(r.text)
     r.raise_for_status()  # 如果请求失败（如4xx或5xx错误）则抛出异常
     data = r.json()
@@ -95,16 +96,14 @@ def build_unique_slug(category: str, base_slug: str) -> str:
 
 
 def try_hugo_new(category: str, slug: str) -> tuple[bool, str]:
-    rel_path = f"posts/{category}/{slug}.md"
-    try:
-        proc = subprocess.run(["hugo", "new", rel_path], capture_output=True, text=True, check=False)
-        # Hugo prints created path to stdout; still compute expected absolute path
-        abs_path = os.path.join(CONTENT_ROOT, category, f"{slug}.md")
-        return proc.returncode == 0 and os.path.exists(abs_path), abs_path
-    except FileNotFoundError:
-        # Hugo not installed / not in PATH
-        abs_path = os.path.join(CONTENT_ROOT, category, f"{slug}.md")
-        return False, abs_path
+    rel_path = f"posts/{category}/{slug}/index.md"
+
+    proc = subprocess.run(["hugo", "new", rel_path], capture_output=True, text=True, check=False, shell=True)
+    # os.system(f"hugo new {rel_path}")
+    abs_path = os.path.abspath(os.path.join("content", rel_path))
+    # Hugo prints created path to stdout; still compute expected absolute path
+    return proc.returncode == 0 and os.path.exists(abs_path), abs_path
+
 
 
 
@@ -121,20 +120,25 @@ def main(argv: list[str]) -> int:
 
     title = argv[2].strip()
 
+    _main(category, title)
+    return 0
+
+
+def _main(category, title):
     # Build slug from translation, fallback to time-based
     translated = translate_zh_to_en(title)
     base_slug = slugify(translated) if translated else ""
     slug = build_unique_slug(category, base_slug)
-
     ok, path = try_hugo_new(category, slug)
     assert ok
     print(path)
-    return 0
 
+
+def test_main():
+    _main(
+        "duoba",
+        "多个vscode窗口打开同一个目录文件夹2"
+    )
 
 if __name__ == "__main__":
-    #  python .\scripts\new_post.py duoba "2025年第一篇"
-    if len(sys.argv) < 2:
-        sys.argv.append("duoba")
-        sys.argv.append("2025年第一篇")
     sys.exit(main(sys.argv))

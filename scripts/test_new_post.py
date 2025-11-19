@@ -137,7 +137,7 @@ def _main(category, title):
 def test_main():
     _main(
         "duoba",
-        "多个vscode窗口打开同一个目录文件夹2"
+        "【排查实录】Curl 通但 Node 不通？一次 macOS、旁路由与 EHOSTUNREACH 的填坑记"
     )
 
 if __name__ == "__main__":

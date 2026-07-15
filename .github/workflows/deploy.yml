@@ -42,6 +42,8 @@ jobs:
           python-version: "3.11"
 
       - name: Update Algolia search index
+        # Algolia 出问题（应用失效/密钥错/网络）时只让搜索索引不更新，绝不阻断站点部署
+        continue-on-error: true
         # App ID / 索引名是公开值，直接内联；仅 Admin Key 走仓库 secret
         env:
           ALGOLIA_APP_ID: ZTQDHM078F

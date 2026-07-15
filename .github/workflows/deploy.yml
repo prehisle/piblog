@@ -33,55 +33,8 @@ jobs:
           hugo-version: "latest"
           extended: true
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install Python deps (requirements.txt if present)
-        shell: bash
-        run: |
-          set -e
-          if [ -f scripts/requirements.txt ]; then
-            pip install -r scripts/requirements.txt
-          else
-            # 至少安装 algoliasearch；如脚本需要其他库，请放入 scripts/requirements.txt
-            pip install algoliasearch
-          fi
-
       - name: Build site with Hugo
         run: hugo --minify
-
-      - name: Debug Algolia env
-        env:
-          ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
-          ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
-          ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
-          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-        run: |
-          echo "ALGOLIA_APP_ID: ${ALGOLIA_APP_ID:+set}"
-          echo "ALGOLIA_INDEX_NAME: ${ALGOLIA_INDEX_NAME:+set}"
-          echo "ALGOLIA_INDEX_FILE: ${ALGOLIA_INDEX_FILE:+set}"
-          # 仅打印长度，避免泄露密钥
-          if [ -n "${ALGOLIA_ADMIN_KEY}" ]; then
-            echo "ALGOLIA_ADMIN_KEY length: ${#ALGOLIA_ADMIN_KEY}"
-          else
-            echo "ALGOLIA_ADMIN_KEY: <empty>"
-          fi
-
-      - name: Update Algolia index
-        # Algolia 应用不可用（如 DNS 解析失败/应用已删）时不阻断 Pages 部署
-        continue-on-error: true
-        # 将必要的密钥通过仓库 Settings -> Secrets and variables -> Actions 配置
-        env:
-          # 从 Repository variables 读取
-          ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
-          ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
-          ALGOLIA_INDEX_FILE: ${{ vars.ALGOLIA_INDEX_FILE }}
-          # 从 Secrets 读取
-          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-        run: |
-          python scripts/upload_index_to_algolia.py
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3

@@ -249,7 +249,8 @@ title = "多多小站"
       [languages.zh-cn.params.search]
         enable = true
         # 搜索引擎的类型 ("lunr", "algolia")
-        type = "algolia"
+        # lunr = 纯客户端本地搜索，零外部依赖；中文由主题自动加载 lunr.zh + segmentit 分词
+        type = "lunr"
         # 文章内容最长索引长度
         contentLength = 4000
         # 搜索框的占位提示语

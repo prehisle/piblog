@@ -70,6 +70,8 @@ jobs:
           fi
 
       - name: Update Algolia index
+        # Algolia 应用不可用（如 DNS 解析失败/应用已删）时不阻断 Pages 部署
+        continue-on-error: true
         # 将必要的密钥通过仓库 Settings -> Secrets and variables -> Actions 配置
         env:
           # 从 Repository variables 读取

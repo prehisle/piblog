@@ -249,8 +249,7 @@ title = "多多小站"
       [languages.zh-cn.params.search]
         enable = true
         # 搜索引擎的类型 ("lunr", "algolia")
-        # lunr = 纯客户端本地搜索，零外部依赖；中文由主题自动加载 lunr.zh + segmentit 分词
-        type = "lunr"
+        type = "algolia"
         # 文章内容最长索引长度
         contentLength = 4000
         # 搜索框的占位提示语
@@ -265,8 +264,8 @@ title = "多多小站"
         absoluteURL = false
         [languages.zh-cn.params.search.algolia]
           index = "blog.share4y.cn"
-          appID = "ISSX9AJ5QX"
-          searchKey = "eda2cf702b8190730cc329692422b4ec"
+          appID = "ZTQDHM078F"
+          searchKey = "ca767cf8ad0b94a8e9ae676ac5edda1f"
 [params]
   # LoveIt theme version
   # LoveIt 主题版本

@@ -36,6 +36,22 @@ jobs:
       - name: Build site with Hugo
         run: hugo --minify
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update Algolia search index
+        # App ID / 索引名是公开值，直接内联；仅 Admin Key 走仓库 secret
+        env:
+          ALGOLIA_APP_ID: ZTQDHM078F
+          ALGOLIA_INDEX_NAME: blog.share4y.cn
+          ALGOLIA_INDEX_FILE: public/index.json
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+        run: |
+          pip install algoliasearch
+          python scripts/upload_index_to_algolia.py
+
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
